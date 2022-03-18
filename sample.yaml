@@ -1,0 +1,41 @@
+config:
+  environments:
+    production:
+      target: https://app.octaneai.com
+      phases:
+        - duration: 30
+          arrivalRate: 1
+      processor: "./js/index.js"
+
+    glemeLocal:
+      target: https://gleme.ngrok.io
+      phases:
+        - duration: 30
+          arrivalRate: 1
+      processor: "./js/index.js"
+    
+scenarios:
+  - flow:
+      # Start Quiz
+      - post:
+          url: "/_quiz_/start"
+          beforeRequest: "generateUserRef"
+          afterResponse: "logResponse"
+          form:
+            bot_id: z66rmx2fy63i2io5
+            quiz_id: M3MPF0yF98jUYI2l
+            preview: false
+
+      # Loop through submit answers
+      # - post:
+
+          # json:
+          #   bot_id: z66rmx2fy63i2io5
+          #   quiz_id: M3MPF0yF98jUYI2l
+          #   container_type: 
+          #   container_id: 
+          #   quiz_url: https://aleksneweststorelive.myshopify.com/pages/quiz
+          #   quiz_response_id: kjr3hTWuYJeQuqBt
+          #   question_id: d4d283c94cea9eb22542e424e709653400c67896
+          #   value: 
+          #   preview: false

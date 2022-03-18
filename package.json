@@ -1,0 +1,17 @@
+{
+  "name": "artillery-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:production": "artillery run -e production sample.yaml",
+    "test:gleme": "artillery run -e glemeLocal sample.yaml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "artillery": "^2.0.0-12",
+    "uuid": "^8.3.2"
+  }
+}
